@@ -121,7 +121,8 @@ Ready! Now make your second contribution, but using a separate _branch_:
 - Type `git push -u origin second-contribution`, hit Enter/Return, and repeat `git status`
     - 👀 You should see "Your branch is up to date with 'origin/second-contribution'" and "nothing to commit, working tree clean"
 - Follow the steps from the previous section to open a pull request, and wait for it to be merged
-- Type `git switch main`, hit Enter/Return, and follow the cleanup steps from this section
+- After it's merged, click the "Delete branch" button
+- Go back to the terminal, type `git switch main`, hit Enter/Return, and follow the cleanup steps from this section
 - Type `git branch --delete second-contribution` and hit Enter/Return
 
 **Done when**: Your second pull request is merged, your local `main` branch is up to date with `origin/main`, your `second-contribution` branch doesn't exist anymore.
