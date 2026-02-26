@@ -35,7 +35,7 @@
 - Use "personal-readme" for the workspace name
 - Wait for the workspace to be set up
 
-**Simple workflow**:
+Now, make an edit and push it:
 
 - Open your `README.md`
 - Make a small edit
@@ -50,15 +50,83 @@
 
 **Done when**: Your GitHub profile shows the _updated_ contents of your personal README at the top
 
-**Advanced workflow**:
+### 4. Get started with the git command-line interface (CLI)
+
+Still on Firebase Studio:
 
 - Open your `README.md`
 - Make a small edit
 - Open the hamburger menu on the top-left, View, Terminal
 - When the terminal is ready (you should see a line ending with `$`), type `git status`, then hit the Enter/Return key
-    - 👀 You should see `modified: README.md` highlighted in **red**
+    - 👀 You should see "Changes not staged for commit" and `modified: README.md` highlighted in **red**
 - Type `git add README.md`, hit Enter/Return, and then repeat `git status`
-    - 
+    - 👀 You should see "Changes to be committed" and `modified: README.md` highlighted in **green**
+- Type `git commit -m 'Update README from the terminal'`, hit Enter/Return, and then repeat `git status`
+    - 👀 You should see "Your branch is ahead of 'origin/main' by 1 commit" and "nothing to commit, working tree clean"
+- Type `git push`, hit Enter/Return, and then repeat `git status`
+    - 👀 You should see "Your branch is up to date with 'origin/main'" and "nothing to commit, working tree clean"
+
+**Done when**: Your GitHub profile shows the _updated_ contents of your personal README at the top
+
+### 5. Contribute to somebody else's repository
+
+- Open https://github.com/astrojuanlu/from-zero-to-hero-git-github/
+- Click the "Fork" button on the top-right
+- Click the "Create fork" button on the bottom-right
+    - You should now be redirected to `https://github.com/<your-username>/from-zero-to-hero-git-github`
+- Go to https://studio.firebase.google.com/
+- Click the "Import Repo" button at the bottom
+- Paste the URL of your newly created fork
+
+> [!WARNING]
+> For simplicity, use the URL of the repo and _not_ the URL of the official repository!
+> Otherwise, the steps below will need a few changes.
+
+- Wait for the workspace to be set up
+
+Now, make an edit and push it to your fork:
+
+- Go to the directory corresponding to the event you are in
+- Follow the instructions from the README in that directory
+- Use the VS Code interface _or_ the git CLI to make a commit and push it
+
+Now, the final step: create a pull request!
+
+- Navigate to your fork (the URL from the previous step)
+- Click the "Contribute" button, then "Open pull request"
+- Click "Create pull request"
+- Wait for the pull request to be merged
+
+**Done when**: Your pull request is merged 🎉
+
+### 6. Make a second contribution to somebody else's repository
+
+> [!WARNING]
+> This looks silly but it isn't. _After_ the first contribution is merged, some cleanup steps are needed
+> to be able to continue working. This section will guide you through them.
+
+> [!INFO]
+> Similar steps can be followed using the UI. It is left as an exercise to the reader.
+
+- Go to the terminal, type `git fetch`, hit Enter/Return, and repeat `git status`
+    - 👀 You should see "Your branch is behind `origin/main` by 2 commits, and can be fast-forwarded" and "nothing to commit, working tree clean"
+- Type `git merge --ff-only`, hit Enter/Return, and repeat `git status`
+    - 👀 You should see "Your branch is up to date with 'origin/main'" and "nothing to commit, working tree clean"
+
+Ready! Now make your second contribution, but using a separate _branch_:
+
+- Type `git switch --create second-contribution`, hit Enter/Return, and repeat `git status`
+    - 👀 You should see "Switched to a new branch 'second-contribution'"
+- Make a change to your file and commit it using the steps from the previous sections
+- Type `git push -u origin second-contribution`, hit Enter/Return, and repeat `git status`
+    - 👀 You should see "Your branch is up to date with 'origin/second-contribution'" and "nothing to commit, working tree clean"
+- Follow the steps from the previous section to open a pull request, and wait for it to be merged
+- Type `git switch main`, hit Enter/Return, and follow the cleanup steps from this section
+- Type `git branch --delete second-contribution` and hit Enter/Return
+
+**Done when**: Your second pull request is merged, your local `main` branch is up to date with `origin/main`, your `second-contribution` branch doesn't exist anymore.
+
+If you made it this far, congratulations! 🏆
 
 ## Resources
 
