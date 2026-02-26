@@ -105,7 +105,7 @@ Now, the final step: create a pull request!
 > This looks silly but it isn't. _After_ the first contribution is merged, some cleanup steps are needed
 > to be able to continue working. This section will guide you through them.
 
-> [!INFO]
+> [!NOTE]
 > Similar steps can be followed using the UI. It is left as an exercise to the reader.
 
 - Go to the terminal, type `git fetch`, hit Enter/Return, and repeat `git status`
